@@ -1,0 +1,245 @@
+body {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #333;
+}
+
+.container {
+  max-width: 1100px; /* Increased max-width for better desktop layout */
+  margin: 5% auto; /* Adjusted vertical margin */
+  padding: 0 20px; /* Added horizontal padding */
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 30px; /* Added gap for spacing */
+  margin-bottom: 50px; /* Adjusted margin */
+}
+
+.heading {
+  width: 34%; /* Adjusted width for better distribution */
+  text-align: left;
+  /* margin-bottom: 20px; */ /* Removed as gap handles spacing */
+}
+
+.heading h1 {
+  font-size: 2.5rem; /* Increased font size */
+  color: #3d0a4e;
+  margin-bottom: 15px; /* Added margin */
+}
+
+.heading p {
+  color: #777;
+  line-height: 1.6;
+  font-size: 1.1rem; /* Adjusted font size */
+}
+
+.ratings {
+  width: 55%; /* Adjusted width for better distribution */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Added gap for spacing */
+  margin: 40px auto; /* Reset margin */
+}
+
+.rating {
+  width: 100%; /* Full width for ratings in their container */
+  background: #f5f1f7;
+  padding: 15px 25px; /* Adjusted padding */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adjusted gap */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Added subtle shadow */
+}
+
+.centre {
+  margin: 0; /* Reset margin */
+  align-self: center; /* Center align in flex container */
+}
+
+.fin {
+  margin: 0; /* Reset margin */
+  align-self: flex-end; /* Align to end in flex container */
+}
+
+.stars {
+  color: orange;
+  font-size: 1.1rem; /* Adjusted font size */
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px; /* Adjusted gap */
+  margin-top: 30px;
+}
+
+.card {
+  background: #4b0a63;
+  color: #fff;
+  padding: 25px; /* Adjusted padding */
+  border-radius: 12px;
+  flex: 1 1 calc(33% - 25px); /* Flexible sizing for 3 columns */
+  min-width: 300px; /* Adjusted min-width */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card small {
+  color: #c9a2db;
+}
+
+.card p {
+  margin-top: 15px; /* Adjusted margin */
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card-item {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Added gap */
+  margin-bottom: 15px; /* Added margin */
+  width: auto; /* Allow natural width */
+}
+
+.card-item img {
+  width: 45px; /* Adjusted size */
+  height: 45px; /* Adjusted size */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Animation */
+
+.rating:hover {
+  background-color: #dbdada;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #8f33ad;
+  transform: translateY(-5px); /* Added subtle lift on hover */
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .top {
+    flex-direction: column;
+    align-items: center; /* Center align items */
+  }
+
+  .heading,
+  .ratings {
+    width: 100%;
+    text-align: center; /* Center text */
+  }
+
+  .heading h1 {
+    font-size: 2.2rem;
+  }
+
+  .heading p {
+    font-size: 1rem;
+  }
+
+  .rating {
+    flex-direction: column; /* Stack stars and text */
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 5px;
+  }
+
+  .centre,
+  .fin {
+    align-self: auto; /* Reset align-self */
+  }
+
+  .testimonials {
+    justify-content: center; /* Center cards */
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 25px); /* 2 columns on tablet */
+    max-width: 450px; /* Limit card width */
+  }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 5% 10px;
+        padding: 0;
+    }
+
+    .testimonials {
+        flex-direction: column;
+        align-items: center; /* Center single column cards */
+    }
+
+    .card {
+        flex: 1 1 100%; /* Single column on mobile */
+        max-width: 350px; /* Adjusted max-width for mobile */
+    }
+
+    .heading h1 {
+        font-size: 2rem;
+    }
+
+    .heading p {
+        font-size: 0.95rem;
+    }
+
+    .rating span {
+        font-size: 0.9rem;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading h1 {
+        font-size: 1.8rem;
+    }
+
+    .heading p {
+        font-size: 0.85rem;
+    }
+
+    .rating {
+        padding: 10px 15px;
+    }
+
+    .stars {
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h3 {
+        font-size: 0.95rem;
+    }
+
+    .card small {
+        font-size: 0.8rem;
+    }
+}
